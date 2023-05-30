@@ -88,10 +88,9 @@ public class Main {
         
         CineService cs = new CineService();
         Sala sala = new Sala();
+        List especs = new ArrayList();
         Pelicula peli = new Pelicula("Harry Potter", 2.35, 16, "J.K.Rowling");
-        Espectador e1 = new Espectador("Guido", 33, 300);
-        Espectador e2 = new Espectador("Julieta", 24, 450);
-        Espectador e3 = new Espectador("Ludmila", 8, 70);
+        
         Cine cine = new Cine(peli, sala, 100);
         
         cs.acomodarEspectadores(cine, e1);

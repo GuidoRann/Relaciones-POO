@@ -1,11 +1,20 @@
 package Servicios;
 
 import Entidades.CineApp.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class CineService {
 
     Scanner consola = new Scanner(System.in).useDelimiter("\n");
+    
+    public List<Espectador> crearEspectadores(List<Espectador> e){
+        e = new ArrayList();
+        
+        int cant = (int) (Math.random() * 17 + 1);
+        
+    }
 
     public void acomodarEspectadores(Cine cine, Espectador e) {
         mostrarSala(cine.getSala());

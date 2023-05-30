@@ -1,4 +1,4 @@
-package Servicios;
+ package Servicios;
 
 import Entidades.BarajaEspañola.*;
 import java.util.ArrayList;
@@ -37,7 +37,7 @@ public class BarajaServicio {
     }
 
     public int cartasDisponibles(Baraja b, List<Carta> card) {
-        return card.size() - b.getSiguiente();
+        return card.size();
        
     }
 
