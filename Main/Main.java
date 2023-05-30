@@ -93,9 +93,10 @@ public class Main {
         
         Cine cine = new Cine(peli, sala, 100);
         
-        cs.acomodarEspectadores(cine, e1);
-        cs.acomodarEspectadores(cine, e2);
-        cs.acomodarEspectadores(cine, e3);
+        
+        cs.crearEspectadores(especs);
+        cs.acomodarEspectadores(cine, especs);
+        cs.mostrarSala(sala);
         
         
         
