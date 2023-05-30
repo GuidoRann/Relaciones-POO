@@ -36,7 +36,7 @@ public class BarajaServicio {
         } else System.out.println("No hay más cartas en la baraja.");
     }
 
-    public int cartasDisponibles(Baraja b, List<Carta> card) {
+    public int cartasDisponibles(List<Carta> card) {
         return card.size();
        
     }
@@ -44,7 +44,7 @@ public class BarajaServicio {
     public void darCartas(Baraja b, List<Carta> card) {
         System.out.println("Ingrese la cantidad de cartas a dar");
         int cant = consola.nextInt();
-        if (cant <= cartasDisponibles(b, card)) {
+        if (cant <= cartasDisponibles(card)) {
             for (int i = 0; i < cant; i++) {
                 siguienteCarta(b, card);
             }
