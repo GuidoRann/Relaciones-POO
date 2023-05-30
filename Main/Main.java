@@ -1,8 +1,10 @@
  package Main;
 
 import Entidades.BarajaEspañola.*;
+import Entidades.CineApp.*;
 import Entidades.Mascotas.*;
 import Entidades.RuletaRusa.*;
+import Servicios.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -28,7 +30,7 @@ public class Main {
         */
         
         //------------------------Ejercicio 2-----------------------------------------
-        
+        /*
         Revolver r = new Revolver();
         List<Jugador> listaJugadores = new ArrayList();
         String exit;
@@ -47,12 +49,13 @@ public class Main {
         ruleta.llenarJuego(listaJugadores, r);
         r.mostrar();
         ruleta.ronda();
-        
+        */
         
         //------------------------Ejercicio 3-----------------------------------------
         /*
+        BarajaServicio bs = new BarajaServicio();
         Baraja b1 = new Baraja();
-        List<Carta> card = b1.crearBaraja();
+        List<Carta> card = bs.crearBaraja(b1);
         
         int op;
         do {
@@ -67,11 +70,11 @@ public class Main {
         op = consola.nextInt();
             
             switch (op) {
-                case 1 -> b1.mostrarBaraja(card);
-                case 2 -> b1.barajar(card);
-                case 3 -> b1.darCartas(card);
-                case 4 -> b1.siguienteCarta(card);
-                case 5 -> b1.cartasMonton();
+                case 1 -> bs.mostrarBaraja(b1, card);
+                case 2 -> bs.barajar(card);
+                case 3 -> bs.darCartas(b1, card);
+                case 4 -> bs.siguienteCarta(b1, card);
+                case 5 -> bs.cartasMonton(b1);
                 case 6 -> System.out.println("Saliendo, vuelva prontos...");
                 default -> System.out.println("No se encontró la opcion");
             }
@@ -79,5 +82,23 @@ public class Main {
         */
         
         //------------------------Ejercicio Extra 1-----------------------------------------
+        
+        
+        //------------------------Ejercicio Extra 1-----------------------------------------
+        
+        CineService cs = new CineService();
+        Sala sala = new Sala();
+        Pelicula peli = new Pelicula("Harry Potter", 2.35, 16, "J.K.Rowling");
+        Espectador e1 = new Espectador("Guido", 33, 300);
+        Espectador e2 = new Espectador("Julieta", 24, 450);
+        Espectador e3 = new Espectador("Ludmila", 8, 70);
+        Cine cine = new Cine(peli, sala, 100);
+        
+        cs.acomodarEspectadores(cine, e1);
+        cs.acomodarEspectadores(cine, e2);
+        cs.acomodarEspectadores(cine, e3);
+        
+        
+        
     }
 }
